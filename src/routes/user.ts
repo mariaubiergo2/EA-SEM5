@@ -8,8 +8,8 @@ const router = Router(); //es el manejador de las rutas, las interpreta, con est
 /**
  * http://localhost:3002/items [GET]
  */
-router.get('/', getPeople);
-router.get('/:idUser', getPerson);
+router.get("/all", getPeople);
+router.get("/:idUser", getPerson);
 router.post("/",postPerson);
 router.put("/:idUser",updatePerson);
 router.delete("/:idUser",deletePerson);

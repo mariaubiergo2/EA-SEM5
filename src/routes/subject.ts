@@ -3,7 +3,7 @@ import { delete_Subject,get_Subject,get_Subjects,post_Subject, update_Subject } 
 
 const router=Router();
 
-router.get("/",get_Subjects);
+router.get("/all",get_Subjects);
 router.get("/:idSubject",get_Subject);
 router.post("/",post_Subject);
 router.put("/:idSubject",update_Subject);
