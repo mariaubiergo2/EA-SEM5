@@ -8,8 +8,7 @@ const SubjectSchema = new Schema<Subject>(
             required:true,
         },
         users:{
-            type: Schema.Types.ObjectId,
-            required:true,
+            type: Schema.Types.ObjectId
         },
         semester:{
             type: Number,
