@@ -9,7 +9,7 @@ const getPerson=async({params}:Request,res:Response)=>{
         const data=response ? response:"NOT_FOUND";
         res.send(data);
     } catch(e){
-        handleHttp(res,"ERROR_GET_ITEM");
+        handleHttp(res,"ERROR_GET_USER");
     }
 };
 
@@ -18,7 +18,7 @@ const getPeople=async(req:Request,res:Response)=>{
         const response=await getUsers();
         res.send(response);
     } catch(e){
-        handleHttp(res,"ERROR_GET_ITEMS");
+        handleHttp(res,"ERROR_GET_USERS");
     }
 };
 
@@ -28,7 +28,7 @@ const updatePerson=async ({params,body}:Request,res:Response)=>{
         const response=await updateUser(idUser,body);
         res.send(response);
     } catch(e){
-        handleHttp(res,"ERROR_UPDATE_ITEM");
+        handleHttp(res,"ERROR_UPDATE_USER");
     }
 };
 
@@ -36,7 +36,8 @@ const postPerson=async ({body}:Request,res:Response)=>{
     try{
         const responsePerson=await insertUser(body);
         res.send(responsePerson);
-        handleHttp(res,"ERROR_POST_ITEM");
+    }catch(e){
+        handleHttp(res,"ERROR_POST_USER");
     }
 };
 
@@ -46,7 +47,7 @@ const deletePerson=async ({params}:Request,res:Response)=>{
         const response=await deleteUser(idUser);
         res.send(response);
     } catch(e){
-        handleHttp(res,"ERROR_DELETE_ITEM");
+        handleHttp(res,"ERROR_DELETE_USER");
     }
 };
 
