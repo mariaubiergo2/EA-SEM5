@@ -31,4 +31,5 @@ const deleteSubject=async(id:string)=>{
     const responseItem=await SubjectModel.deleteOne({_id:id});
     return responseItem;
 }
+
 export {insertSubject,getSubject,getSubjects,updateSubject,deleteSubject};

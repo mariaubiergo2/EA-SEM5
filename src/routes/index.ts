@@ -1,10 +1,12 @@
 import {Router} from "express";
 import {readdirSync} from "fs";
 
-
+// The route to the actual directory
 const PATH_ROUTER = `${__dirname}`;
+
 const router = Router();
 
+// Get the file names in routes dir without the extension (eg. user.ts > user)
 const cleanFileName = (fileName:string) => {
     const file = fileName.split('.').shift(); //Lo que hacemos es quitarle el .ts a los archivos para que nos devuelva solo el nombre
     return file;

@@ -26,6 +26,9 @@ const UserSchema = new Schema<User>(
     }
 );
 
+//Once the Schema is created, it must be implemented
+//1st argument ('users') is the name of the collection
+//2nd argument (UserSchema) is what it feds it
 const UserModel = model('users', UserSchema);
 
 export default UserModel;

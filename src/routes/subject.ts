@@ -8,4 +8,5 @@ router.get("/:idSubject",get_Subject);
 router.post("/",post_Subject);
 router.put("/:idSubject",update_Subject);
 router.delete("/:idSubject",delete_Subject);
+
 export{router};

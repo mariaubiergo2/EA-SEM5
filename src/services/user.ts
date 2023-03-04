@@ -1,7 +1,6 @@
+//In charge to connect with the dB
 import { User } from "../interfaces/user.interface";
 import UserModel from "../models/user";
-
-
 
 const insertUser = async(item: User) => {
     const responseInsert = await UserModel.create(item);
