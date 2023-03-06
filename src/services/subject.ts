@@ -1,3 +1,4 @@
+import { Types } from "mongoose";
 import { Subject } from "../interfaces/subject.interface";
 import SubjectModel from "../models/subject";
 
@@ -32,4 +33,16 @@ const deleteSubject=async(id:string)=>{
     return responseItem;
 }
 
-export {insertSubject,getSubject,getSubjects,updateSubject,deleteSubject};
+const matriculateSubject=async(idUser:string,idSubject:string)=>{
+    console.log(idUser);
+    console.log(idSubject);
+    const responseItem=await SubjectModel.findOneAndUpdate(
+        {_id:idSubject},
+        {$addToSet: {users: new Types.ObjectId(idUser)}},
+        {new: true}
+    ).populate('users');
+    console.log(responseItem);
+    return responseItem;
+};
+
+export { insertSubject, getSubject, getSubjects, updateSubject, deleteSubject, matriculateSubject };
