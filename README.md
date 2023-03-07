@@ -5,6 +5,7 @@ We are going to use:
  - Thunder Client as an extension in Visual Studio Code to run your REST API locally. 
 
 IMPORTANT COMMANDS BEFORE USING VISUAL STUDIO CODE
+--------------------------------------------------
 
 - Check versions
 
