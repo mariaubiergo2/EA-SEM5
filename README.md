@@ -1,11 +1,10 @@
 We are going to use: 
 
- - Visual Studio Code as an editor: https://code.visualstudio.com/Download \
- - MongoDB Community Server: https://www.mongodb.com/try/download/community \
- - Thunder Client as an extension in Visual Studio Code to run your REST API locally. \
+ - Visual Studio Code as an editor: https://code.visualstudio.com/Download 
+ - MongoDB Community Server: https://www.mongodb.com/try/download/community 
+ - Thunder Client as an extension in Visual Studio Code to run your REST API locally. 
 
 IMPORTANT COMMANDS BEFORE USING VISUAL STUDIO CODE
---------------------------------------------------
 
 - Check versions
 
