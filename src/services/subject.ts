@@ -8,12 +8,12 @@ const insertSubject=async(item:Subject)=>{
 };
 
 const getSubjects=async()=>{
-    const responseItem=await SubjectModel.find({});
+    const responseItem=await SubjectModel.find({}).populate('users');
     return responseItem;
 };
 
 const getSubject=async(id:string)=>{
-    const responseItem=await SubjectModel.findOne({_id:id});
+    const responseItem=await SubjectModel.findOne({_id:id}).populate('users');
     return responseItem;
 };
 
@@ -24,7 +24,7 @@ const updateSubject=async(id:string,data:Subject)=>{
         {
             new:true,
         }
-    );
+    ).populate('users');
     return responseItem;
 };
 
@@ -34,14 +34,12 @@ const deleteSubject=async(id:string)=>{
 }
 
 const matriculateSubject=async(idUser:string,idSubject:string)=>{
-    console.log(idUser);
-    console.log(idSubject);
-    const responseItem=await SubjectModel.findOneAndUpdate(
+    const responseItem = await SubjectModel.findOneAndUpdate(
         {_id:idSubject},
         {$addToSet: {users: new Types.ObjectId(idUser)}},
         {new: true}
     ).populate('users');
-    console.log(responseItem);
+    console.log(responseItem?.users);
     return responseItem;
 };
 
