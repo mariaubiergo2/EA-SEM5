@@ -43,4 +43,5 @@ const matriculateSubject=async(idUser:string,idSubject:string)=>{
     return responseItem;
 };
 
+
 export { insertSubject, getSubject, getSubjects, updateSubject, deleteSubject, matriculateSubject };

@@ -1,5 +1,5 @@
-import { Request,Response } from "express";
-import { insertUser,getUsers,getUser,updateUser,deleteUser} from "../services/user";
+import { request, Request,Response } from "express";
+import { insertUser,getUsers,getUser,updateUser,deleteUser,getSubjectsByUserId} from "../services/user";
 import { handleHttp } from "../utils/error.handle";
 
 const getPerson=async({params}:Request,res:Response)=>{
@@ -51,4 +51,14 @@ const deletePerson=async ({params}:Request,res:Response)=>{
     }
 };
 
-export{getPerson,getPeople,postPerson,updatePerson,deletePerson};
+const giveMeSubjects=async({params}:Request,res:Response)=>{
+    try{
+        const {idUser}=params;
+        const response=await getSubjectsByUserId(idUser);
+        res.send(response);
+    } catch(e){
+        handleHttp(res,"ERROR_OBTAINING_SUBJECTS");
+    }
+}
+
+export{getPerson,getPeople,postPerson,updatePerson,deletePerson,giveMeSubjects};
